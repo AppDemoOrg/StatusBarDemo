@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--带有向右箭头textview-->
+    <declare-styleable name="RightArrowTextView">
+        <attr name="rightArrow" format="reference" />
+    </declare-styleable>
+
+    <!--自定义分割线-->
+    <declare-styleable name="BorderRelativeLayout">
+        <!--边框的粗度-->
+        <attr name="borderStrokeWidth" format="dimension"/>
+        <!--边框颜色-->
+        <attr name="borderColor" format="color"/>
+        <!--底边边线左边断开距离-->
+        <attr name="borderBottomLeftMargin" format="dimension"/>
+        <!--底边边线右边断开距离-->
+        <attr name="borderBottomRightMargin" format="dimension"/>
+        <!--是否需要上边框-->
+        <attr name="topBorderVisible" format="boolean"/>
+        <!--是否需要左右边框-->
+        <attr name="leftAndRightBorderVisible" format="boolean"/>
+        <!--是否需要下边框-->
+        <attr name="bottomBorderVisible" format="boolean"/>
+    </declare-styleable>
+
+</resources>

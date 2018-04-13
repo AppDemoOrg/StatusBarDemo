@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bind="http://schemas.android.com/apk/res-auto">
+
+    <!--绑定数据-->
+    <data>
+        <variable name="toolbar"
+            type="com.pi.pilot.common.model.ToolbarViewModel" />
+
+        <variable name="model"
+            type="com.abt.statusbardemo.LauncherViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background"
+        android:orientation="vertical">
+
+        <include
+            layout="@layout/layout_common_title_bar"
+            bind:toolbar="@{toolbar}" />
+
+        <include layout="@layout/layout_camera"
+            bind:model="@{model}" />
+
+        <include layout="@layout/layout_gallery"
+            bind:model="@{model}" />
+
+        <include layout="@layout/layout_live"
+            bind:model="@{model}" />
+
+        <include layout="@layout/layout_setting"
+            bind:model="@{model}" />
+
+    </RelativeLayout>
+
+</layout>

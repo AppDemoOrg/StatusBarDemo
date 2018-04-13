@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <import type="android.view.View" />
+        <import type="android.text.TextUtils"/>
+        <variable
+            name="item"
+            type="com.pi.pilot.common.dialog.CommonDialogViewModel"/>
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/left_top_corner_bg"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/dp_15"
+            android:paddingRight="@dimen/dp_15"
+            android:layout_marginLeft="@dimen/dp_5"
+            android:layout_marginRight="@dimen/dp_5"
+            android:paddingTop="@dimen/dp_20">
+
+            <TextView
+                android:id="@+id/tv_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dp_30"
+                android:textColor="@color/C_44_44_44"
+                android:textSize="@dimen/sp_16"
+                android:text="@{item.content}"
+                android:visibility="@{ TextUtils.isEmpty(item.content) ? View.GONE : View.VISIBLE}" />
+
+            <Button
+                android:id="@+id/btn_positive"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_45"
+                android:layout_marginBottom="@dimen/dp_12"
+                android:background="@drawable/common_blue"
+                android:textColor="@color/C_F0_F0_F0"
+                android:textSize="@dimen/sp_15"
+                android:text="@{item.positiveName}"
+                android:visibility="@{ TextUtils.isEmpty(item.positiveName) ? View.GONE : View.VISIBLE}"
+                android:onClick="@{() -> item.onPositiveClick()}"/>
+
+            <Button
+                android:id="@+id/btn_negative"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_45"
+                android:layout_marginBottom="@dimen/dp_11.5"
+                android:background="@drawable/common_red"
+                android:textColor="@color/C_F0_F0_F0"
+                android:textSize="@dimen/sp_15"
+                android:text="@{item.negativeName}"
+                android:visibility="@{ TextUtils.isEmpty(item.negativeName) ? View.GONE : View.VISIBLE}"
+                android:onClick="@{() -> item.onNegativeClick()}"/>
+
+            <Button
+                android:id="@+id/btn_neutral"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_45"
+                android:layout_marginBottom="@dimen/dp_10.5"
+                android:background="@drawable/common_gray"
+                android:textColor="@color/C_46_A1_F8"
+                android:textSize="@dimen/sp_15"
+                android:text="@{item.neutralName}"
+                android:visibility="@{ TextUtils.isEmpty(item.neutralName) ? View.GONE : View.VISIBLE}"
+                android:onClick="@{() -> item.onNeutralClick()}"/>
+        </LinearLayout>
+    </RelativeLayout>
+</layout>

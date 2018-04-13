@@ -1,0 +1,9 @@
+<resources>
+
+    <string name="k4_definition">4K</string>
+    <string name="high_definition">高清</string>
+    <string name="standard_definition">标清</string>
+    <string name="smooth_definition">流畅</string>
+    <string name="time_setting_morning">AM</string>
+    <string name="time_setting_afternoon">PM</string>
+</resources>

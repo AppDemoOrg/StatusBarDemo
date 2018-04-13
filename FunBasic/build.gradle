@@ -1,0 +1,64 @@
+apply plugin: 'com.android.library'
+//应用 Bugtags 插件
+/*apply plugin: 'com.bugtags.library.plugin'*/
+
+android {
+    /*useLibrary 'org.apache.http.legacy'*/
+    compileSdkVersion rootProject.ext.android["compileSdkVersion"]
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.android["minSdkVersion"]
+        targetSdkVersion rootProject.ext.android["targetSdkVersion"]
+       /* ndk {
+            // 设置支持的 SO 库构架
+            abiFilters 'armeabi'// 'armeabi-v7a', 'arm64-v8a', 'x86', 'x86_64', 'mips', 'mips64'
+        }*/
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    dataBinding {
+        enabled = true
+    }
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+    }
+}
+
+//Bugtags 插件配置
+/*bugtags {
+    //自动上传符号表功能配置，如果需要根据 build varint 配置，请参考帮助中心->符号表->Android 符号表->配置自动上传符号表
+    appKey "5ddba78610d41d70b6aed3d6bb67e2ee"  //这里是你的 appKey
+    appSecret "29e532c319c54a5a7d0c0d344f503d87"    //这里是你的 appSecret，管理员在设置页可以查看
+    mappingUploadEnabled true
+
+    //网络跟踪功能配置(企业版)
+    //trackingNetworkEnabled true
+}*/
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation rootProject.ext.dependencies["appcompat-v7"]
+    implementation rootProject.ext.dependencies["constraint-layout"]
+    implementation rootProject.ext.dependencies["recyclerview-v7"]
+
+    implementation rootProject.ext.dependencies["glide"]
+    implementation rootProject.ext.dependencies["glide-okhttp3-integration"]
+
+    debugCompile rootProject.ext.dependencies["debugCompile"]
+    releaseCompile rootProject.ext.dependencies["releaseCompile"]
+
+ /*   compile 'com.bugtags.library:bugtags-lib:latest.integration'*/
+    //线上使用，如果不需要使用手动提交 issue，可以选择 metrics 包
+    //compile 'com.bugtags.metrics:bugtags-lib:latest.integration'
+}
+

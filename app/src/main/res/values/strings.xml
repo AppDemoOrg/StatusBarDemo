@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Pilot Launcher</string>
+    <string name="live">直播</string>
+    <string name="camera">相机</string>
+    <string name="gallery">相册</string>
+    <string name="setting">设置</string>
+</resources>

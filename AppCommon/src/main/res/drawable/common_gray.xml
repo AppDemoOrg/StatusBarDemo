@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_pressed="true">
+        <shape>
+            <!-- 开始颜色="" 结束颜色="" 颜色渐变="从上到下" -->
+            <gradient android:angle="270" android:endColor="@color/C_66_E1_E1_E1" android:startColor="@color/C_66_F1_F1_F1" android:type="linear" />
+            <!-- 渐变方向 按钮边缘="" 边缘宽="" -->
+            <stroke android:width="@dimen/dp_0.5" android:color="@color/C_97_97_97" />
+            <!-- 边缘颜色 按钮四个圆角="" -->
+            <corners android:radius="@dimen/dp_10" />
+        </shape>
+    </item>
+    <item>
+        <shape>
+            <gradient android:angle="270" android:endColor="@color/C_E1_E1_E1" android:startColor="@color/C_F1_F1_F1" android:type="linear" />
+            <stroke android:width="@dimen/dp_0.5" android:color="@color/C_97_97_97" />
+            <corners android:radius="@dimen/dp_10" />
+        </shape>
+    </item>
+
+</selector>

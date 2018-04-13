@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable name="toolbar" type="com.pi.pilot.common.model.ToolbarViewModel"/>
+    </data>
+
+    <RelativeLayout
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_20"
+        android:layout_alignParentTop="true"
+        android:background="@color/C_EA_EA_EA">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="@dimen/dp_5"
+            android:gravity="center_vertical"
+            app:ir="@{toolbar.network}" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="@dimen/dp_5"
+            android:gravity="center_vertical"
+            android:textColor="@color/C_22_22_22"
+            android:textSize="@dimen/sp_12"
+            android:text="@{toolbar.title}"
+            />
+<!--        app:pd="@{toolbar}"-->
+
+        <TextView
+            android:id="@+id/tv_time"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:text="@{toolbar.time}"
+            android:gravity="center_vertical"
+            android:textStyle="bold"
+            android:textColor="@color/C_22_22_22"
+            android:textSize="@dimen/sp_12" />
+
+        <com.pi.pilot.common.widget.BatteryView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:layout_marginRight="@dimen/dp_6"
+            android:progress="@{toolbar.progress}"
+            app:batteryCharge="@{toolbar.isCharge}"
+            app:batteryBackground="@drawable/power_lowest"
+            app:batteryChargeIcon="@drawable/power_charging"
+            app:batteryLevel="@drawable/power_full" />
+
+    </RelativeLayout>
+
+</layout>
