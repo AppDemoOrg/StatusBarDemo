@@ -19,6 +19,9 @@ android {
             // 设置支持的 SO 库构架，一般而言，取你所有的库支持的构架的`交集`。
             abiFilters 'armeabi', 'arm64-v8a'// 'armeabi-v7a', 'arm64-v8a', 'x86', 'x86_64', 'mips', 'mips64','armeabi'
         }
+
+        //Enabling multidex support.
+        multiDexEnabled true
     }
 
     buildTypes {
@@ -33,6 +36,10 @@ android {
     dataBinding {
         enabled = true
     }
+
+    dexOptions {
+        javaMaxHeapSize "4g"
+    }
 }
 
 dependencies {
@@ -40,4 +47,5 @@ dependencies {
     implementation rootProject.ext.dependencies["appcompat-v7"]
     implementation rootProject.ext.dependencies["constraint-layout"]
     implementation project(':AppCommon')
+    compile 'com.android.support:multidex:1.0.1'
 }
